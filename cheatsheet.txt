@@ -22,3 +22,19 @@ docker create hello-world
 docker start -a {id}
 
 // -a is attaching the terminal with the container output
+
+// after docker -ps  --all, ids of the last containers can be available 
+// exited containers can be rerun with the id
+
+docker start -a {id}
+
+// removing stopped containers
+docker system prune
+
+// To see logs of the container
+docker logs {id}
+
+// to stop the container
+docker stop {id}
+// this command also stop the container but without cleaning and saveing the infos
+docker kill {id}
