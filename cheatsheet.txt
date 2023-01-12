@@ -1,0 +1,24 @@
+// echo and ls commands are executable with busybox 
+docker run busybox echo hi there
+
+// Container's folders. Linux file system
+docker run busybox ls
+
+//ping command with busybox
+docker run busybox ping google.com
+
+// All running containers
+docker ps
+
+//All the containers that I ever created
+docker ps --all
+
+docker run = docker create + docker start
+
+// docker create returns the id of the container
+docker create hello-world
+
+// start command can be used with that id
+docker start -a {id}
+
+// -a is attaching the terminal with the container output
