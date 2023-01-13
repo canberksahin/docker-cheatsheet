@@ -38,3 +38,38 @@ docker logs {id}
 docker stop {id}
 // this command also stop the container but without cleaning and saveing the infos
 docker kill {id}
+
+// running command on running container
+dokcer exec -it {id} {command}
+
+// running redis-cli on running redis container
+docker exec -it 4e3bc55a7d92 redis-cli
+
+// -it command, -i is setting output of the container to my terminal
+// -t makes terminal more understandable
+
+// to get shell inside container
+docker exec -it {id} sh
+
+// run with sh command
+docker run -it busybox sh
+
+// Building an image
+// Use an existing docker image as a base
+FROM
+
+// Download and install a dependency
+RUN
+
+// Tell the image what to do when it starts as a container
+CMD
+
+// to tag the image
+docker build . -t {tagName}
+docker build -t {tagName} . 
+
+//giving name on running contaniner
+docker run --name {name} {buildName}
+
+// make command to an image already created, returns the new image id
+docker commit -c "CMD 'redis-server'" CONTAINERID
