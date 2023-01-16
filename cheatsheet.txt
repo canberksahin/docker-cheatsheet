@@ -73,3 +73,8 @@ docker run --name {name} {buildName}
 
 // make command to an image already created, returns the new image id
 docker commit -c "CMD 'redis-server'" CONTAINERID
+
+
+
+
+
