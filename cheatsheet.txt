@@ -92,9 +92,17 @@ docker-compose up --build
 // docker compose status
 docker-compose ps
 
+// docker build .dev file
+docker build -f Dockerfile.dev .
 
+// to add volume 
+docker run -p 3000:3000 -v /app/node_modules -v $(pwd):/app {imageId}
+$(pwd):/app this mapes the pwd into the /app folder 
+// for windows users if they are not using git bash 
+// instead of $(pwd) they need to use ${pwd}
 
-
+// to run a command after build
+docker run -it {contId} {command example: npm run test}
 
 
 
